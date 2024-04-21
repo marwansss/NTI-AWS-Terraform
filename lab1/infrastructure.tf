@@ -120,21 +120,21 @@ resource "aws_instance" "web1" {
 
 }
 
-resource "aws_s3_bucket" "S3_bucket" {
-  bucket = "maro-s3"
-  tags = {
-    Name        = "Terraform-State"
-     Environment = "Dev"
-  }
-}
+#resource "aws_s3_bucket" "S3_bucket" {
+#  bucket = "maro-s3"
+#  tags = {
+ #   Name        = "Terraform-State"
+ #    Environment = "Dev"
+ # }
+#}
 
 ##Create DynamoDB table Before intialize the s3 backend
-terraform {
-  backend "s3" {
-    bucket         = "maro-s3"
-    key            = "dev/statefil"
-    region = "us-east-1"
-    dynamodb_table = "terraform"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket         = "maro-s3"
+#    key            = "dev/statefil"
+#    region = "us-east-1"
+#    dynamodb_table = "terraform"
+#  }
+#}
 #LockID is the key of the dynamodb
